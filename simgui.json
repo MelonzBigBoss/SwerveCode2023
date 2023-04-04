@@ -1,0 +1,111 @@
+{
+  "HALProvider": {
+    "Other Devices": {
+      "Talon FX[11]": {
+        "header": {
+          "open": true
+        }
+      },
+      "Talon FX[22]": {
+        "header": {
+          "open": true
+        }
+      },
+      "Talon FX[5]": {
+        "header": {
+          "open": true
+        }
+      }
+    }
+  },
+  "NTProvider": {
+    "types": {
+      "/FMSInfo": "FMSInfo",
+      "/LiveWindow/Ungrouped/Scheduler": "Scheduler",
+      "/LiveWindow/Ungrouped/Talon FX [10]": "Motor Controller",
+      "/LiveWindow/Ungrouped/Talon FX [11]": "Motor Controller",
+      "/LiveWindow/Ungrouped/Talon FX [1]": "Motor Controller",
+      "/LiveWindow/Ungrouped/Talon FX [2]": "Motor Controller",
+      "/LiveWindow/Ungrouped/Talon FX [4]": "Motor Controller",
+      "/LiveWindow/Ungrouped/Talon FX [5]": "Motor Controller",
+      "/LiveWindow/Ungrouped/Talon FX [7]": "Motor Controller",
+      "/LiveWindow/Ungrouped/Talon FX [8]": "Motor Controller",
+      "/LiveWindow/Ungrouped/class frc2::SubsystemBase": "Subsystem",
+      "/LiveWindow/Ungrouped/navX-Sensor[4]": "Gyro",
+      "/SmartDashboard/*ArmSub": "Subsystem",
+      "/SmartDashboard/ArmSub": "Subsystem",
+      "/SmartDashboard/Auto": "String Chooser",
+      "/SmartDashboard/Field": "Field2d",
+      "/SmartDashboard/SendableChooser[0]": "String Chooser",
+      "/SmartDashboard/ShoulderSub": "Subsystem",
+      "/SmartDashboard/SwerveSub": "Subsystem",
+      "/SmartDashboard/WristSub": "Subsystem"
+    },
+    "windows": {
+      "/SmartDashboard/Field": {
+        "traj": {
+          "arrowSize": 0,
+          "arrows": false,
+          "style": "Track",
+          "weight": 1.0
+        },
+        "traja": {
+          "arrowSize": 6,
+          "arrowWeight": 1.0,
+          "style": "Hidden"
+        },
+        "trajb": {
+          "arrowSize": 3,
+          "arrowWeight": 1.0,
+          "style": "Hidden"
+        },
+        "units": "meters",
+        "window": {
+          "visible": true
+        }
+      }
+    }
+  },
+  "NetworkTables": {
+    "Persistent Values": {
+      "open": false
+    },
+    "Retained Values": {
+      "open": false
+    },
+    "transitory": {
+      "SmartDashboard": {
+        "*ArmSub": {
+          "open": true
+        },
+        "*LedSub": {
+          "open": true
+        },
+        "*ShoulderSub": {
+          "open": true
+        },
+        "SendableChooser[0]": {
+          "open": true
+        },
+        "SwerveSub": {
+          "open": true
+        },
+        "open": true
+      },
+      "photonvision": {
+        "open": true
+      }
+    }
+  },
+  "NetworkTables Info": {
+    "Server": {
+      "Subscribers": {
+        "open": true
+      },
+      "open": true
+    }
+  },
+  "NetworkTables View": {
+    "visible": false
+  }
+}
