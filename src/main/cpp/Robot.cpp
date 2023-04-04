@@ -7,6 +7,7 @@
 void Robot::RobotInit() {
   m_container.Panel.SetOutputs(0b11111111111111111111111111111111);
   m_container.XBoxController.SetOutputs(0b11111111111111111111111111111111);
+  m_container.XBoxController.SetRumble(frc::GenericHID::RumbleType::kBothRumble, 1); // Earthquake
 }
 
 void Robot::RobotPeriodic() {
@@ -15,9 +16,15 @@ void Robot::RobotPeriodic() {
 
 void Robot::DisabledInit() {}
 
-void Robot::DisabledPeriodic() {}
+void Robot::DisabledPeriodic() {
+  m_container.sShoulder.SetBrakeMode(brakeSwitch.Get());
+  m_container.sArm.SetBrakeMode(brakeSwitch.Get());
+}
 
-void Robot::DisabledExit() {}
+void Robot::DisabledExit() {
+  m_container.sShoulder.SetBrakeMode(true);
+  m_container.sArm.SetBrakeMode(true);
+}
 
 void Robot::AutonomousInit() {
   m_autonomousCommand = m_container.GetAutonomousCommand();

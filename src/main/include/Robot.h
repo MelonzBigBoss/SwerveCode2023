@@ -13,6 +13,7 @@
 #include "RobotContainer.h"
 #include <frc2/command/CommandScheduler.h>
 
+#include "frc/DigitalInput.h"
 
 class Robot : public frc::TimedRobot {
  public:
@@ -35,4 +36,6 @@ class Robot : public frc::TimedRobot {
   std::optional<frc2::CommandPtr> m_autonomousCommand;
 
   RobotContainer m_container;
+
+  frc::DigitalInput brakeSwitch {0};
 };

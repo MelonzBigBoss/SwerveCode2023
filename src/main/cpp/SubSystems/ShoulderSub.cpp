@@ -72,6 +72,11 @@ void ShoulderSub::moveArmPosition(double percent) {
   mLeadGearBoxMotor->Set(ControlMode::PercentOutput, pidcontroller.Calculate(getAngle(), percent), DemandType_ArbitraryFeedForward, arb_ff);
 }
 
+void ShoulderSub::SetBrakeMode(bool brake) {
+  mLeadGearBoxMotor->SetNeutralMode((NeutralMode)(1 + brake));
+  mChildGearBoxMotor->SetNeutralMode((NeutralMode)(1 + brake));
+}
+
 void ShoulderSub::InitSendable(wpi::SendableBuilder& builder) {
   builder.AddDoubleProperty("Angle", [this] {return getAngle(); }, nullptr);
   builder.AddDoubleProperty("Raw Angle", [this] {return mLeadGearBoxMotor->GetSelectedSensorPosition(); }, nullptr);

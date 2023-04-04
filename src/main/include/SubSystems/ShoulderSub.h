@@ -20,6 +20,7 @@ class ShoulderSub : public frc2::SubsystemBase {
   void Periodic() override;
   void moveArm(double output);
   void moveArmPosition(double percent);
+  void SetBrakeMode(bool brake);
   void stop();
   double getAngle();
   void InitSendable(wpi::SendableBuilder& builder) override;

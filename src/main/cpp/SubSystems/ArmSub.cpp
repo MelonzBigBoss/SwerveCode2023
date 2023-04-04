@@ -49,6 +49,11 @@ void ArmSub::telescopeArmPos(double percent) {
   mArmMotor->Set(ControlMode::MotionMagic,  mapdouble(percent, 0, 100, 0, 52689));
 }
 
+void ArmSub::SetBrakeMode(bool brake) {
+  mArmMotor->SetNeutralMode((NeutralMode)(1 + brake));
+  
+}
+
 void ArmSub::InitSendable(wpi::SendableBuilder& builder) {
   frc2::SubsystemBase::InitSendable(builder);
   builder.AddDoubleProperty("Extension", [this] { return mapdouble(mArmMotor->GetSelectedSensorPosition(), 0, 52689, 0, 100); }, nullptr);
