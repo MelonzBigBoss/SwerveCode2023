@@ -2,7 +2,7 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
-#include "ArmSub.h"
+#include "SubSystems/ArmSub.h"
 
 ArmSub::ArmSub() {
     mArmMotor = new WPI_TalonFX(22, "Karen");

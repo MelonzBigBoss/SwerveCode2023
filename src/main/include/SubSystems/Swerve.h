@@ -9,11 +9,11 @@
 #include <frc/smartdashboard/SmartDashboard.h>
 #include <frc/kinematics/SwerveDriveOdometry.h>
 #include <frc/kinematics/SwerveModulePosition.h>
-#include "AprilTagWrapper.h"
+#include "Util/AprilTagWrapper.h"
 #include "AHRS.h"
 #include <frc/controller/ProfiledPIDController.h>
-#include "SwerveModule.h"
-#include "Constants.h"
+#include "Util/SwerveModule.h"
+#include "Util/Constants.h"
 #include <frc/estimator/SwerveDrivePoseEstimator.h>
 #include <frc/kinematics/SwerveDriveKinematics.h>
 #include <frc/DriverStation.h>

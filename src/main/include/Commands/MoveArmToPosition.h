@@ -7,9 +7,9 @@
 #include <frc2/command/CommandBase.h>
 #include <frc2/command/CommandHelper.h>
 
-#include "ShoulderSub.h"
-#include "ArmSub.h"
-#include "WristSub.h"
+#include "SubSystems/ShoulderSub.h"
+#include "SubSystems/ArmSub.h"
+#include "SubSystems/WristSub.h"
 class MoveArmToPosition
     : public frc2::CommandHelper<frc2::CommandBase, MoveArmToPosition> {
  public:

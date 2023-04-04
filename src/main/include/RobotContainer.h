@@ -5,8 +5,8 @@
 #pragma once
 
 #include <frc2/command/CommandPtr.h>
-#include "Swerve.h"
-#include "TeleopSwerve.h"
+#include "SubSystems/Swerve.h"
+#include "Commands/TeleopSwerve.h"
 #include "frc/Joystick.h"
 #include "frc2/command/button/JoystickButton.h"
 #include "Autos.h"
@@ -19,11 +19,11 @@
 #include <frc/XboxController.h>
 #include <pathplanner/lib/PathPlanner.h>
 #include <frc/PowerDistribution.h>
-#include "ShoulderSub.h"
-#include "ArmSub.h"
-#include "WristSub.h"
-#include "LEDSub.h"
-#include "MoveArmToPosition.h"
+#include "SubSystems/ShoulderSub.h"
+#include "SubSystems/ArmSub.h"
+#include "SubSystems/WristSub.h"
+#include "SubSystems/LEDSub.h"
+#include "Commands/MoveArmToPosition.h"
 #include <frc2/command/Commands.h>
 #include <frc2/command/InstantCommand.h>
 #include <frc/DriverStation.h>
