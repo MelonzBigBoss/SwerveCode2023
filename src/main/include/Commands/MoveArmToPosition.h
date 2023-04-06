@@ -10,14 +10,18 @@
 #include "SubSystems/ShoulderSub.h"
 #include "SubSystems/ArmSub.h"
 #include "SubSystems/WristSub.h"
+#include "SubSystems/Swerve.h"
+
+#include "Util/Constants.h"
 class MoveArmToPosition
     : public frc2::CommandHelper<frc2::CommandBase, MoveArmToPosition> {
  public:
-  MoveArmToPosition(ShoulderSub* sShoulder, ArmSub* sArm, WristSub* sWrist, double percent);
+  MoveArmToPosition(Swerve* sSwerve, ShoulderSub* sShoulder, ArmSub* sArm, WristSub* sWrist, std::string state = "STOWED");
   ShoulderSub* sShoulder;
   ArmSub* sArm;
   WristSub* sWrist;
-  double percent = 0;
+  Swerve* sSwerve;
+  std::string state = 0;
   void Initialize() override;
 
   void Execute() override;
@@ -25,4 +29,6 @@ class MoveArmToPosition
   void End(bool interrupted) override;
 
   bool IsFinished() override;
+  private:
+    ArmState storedState;
 };

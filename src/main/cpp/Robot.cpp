@@ -17,8 +17,8 @@ void Robot::RobotPeriodic() {
 void Robot::DisabledInit() {}
 
 void Robot::DisabledPeriodic() {
-  m_container.sShoulder.SetBrakeMode(brakeSwitch.Get());
-  m_container.sArm.SetBrakeMode(brakeSwitch.Get());
+  m_container.sShoulder.SetBrakeMode(!brakeSwitch.Get());
+  m_container.sArm.SetBrakeMode(!brakeSwitch.Get());
 }
 
 void Robot::DisabledExit() {

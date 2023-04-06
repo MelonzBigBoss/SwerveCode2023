@@ -35,7 +35,7 @@ void RobotContainer::ConfigureBindings() {
 void RobotContainer::ConfigureControllerBindings() {
   sSwerve.SetDefaultCommand(TeleopSwerve(&sSwerve, &XBoxController, 1, 0, 4, true, true));
   RightBumper->OnTrue(new frc2::InstantCommand([this] {sSwerve.ZeroGyro();}, {}));
-  LeftBumper->WhileTrue(MoveArmToPosition(&sShoulder, &sArm, &sWrist, 50).ToPtr());
+  LeftBumper->WhileTrue(MoveArmToPosition(&sSwerve, &sShoulder, &sArm, &sWrist, "KEBOB").ToPtr());
 }
 
 frc2::CommandPtr RobotContainer::GetAutonomousCommand() {

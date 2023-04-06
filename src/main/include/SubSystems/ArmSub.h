@@ -9,16 +9,10 @@
 #include <frc/smartdashboard/SendableBuilderImpl.h>
 #include <frc2/command/SubsystemBase.h>
 #include <frc/controller/PIDController.h>
-#include "map"
 class ArmSub : public frc2::SubsystemBase {
 public:
     ArmSub();
 
-    std::map<std::string, double> Positions{
-        {"Extended" , 100},
-        {"Middle", 50},
-        {"Retracted", 0}
-    }; 
     void Periodic() override;
     void telescopeArm(double output);
     void telescopeArmPos(double percent);

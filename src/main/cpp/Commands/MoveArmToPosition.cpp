@@ -4,24 +4,33 @@
 
 #include "Commands/MoveArmToPosition.h"
 
-MoveArmToPosition::MoveArmToPosition(ShoulderSub* sShoulder, ArmSub* sArm, WristSub* sWrist, double percent) {
+MoveArmToPosition::MoveArmToPosition(Swerve* sSwerve, ShoulderSub* sShoulder, ArmSub* sArm, WristSub* sWrist, std::string state) {
   this->sShoulder = sShoulder;
   this->sArm = sArm;
   this->sWrist = sWrist;
-  this->percent = percent;
+  this->sSwerve = sSwerve;
+  this->state = state;
   AddRequirements(sShoulder);
   AddRequirements(sArm);
   AddRequirements(sWrist);
 }
 
 // Called when the command is initially scheduled.
-void MoveArmToPosition::Initialize() {}
+void MoveArmToPosition::Initialize() {
+  storedState = constants::Positions.at(state);
+}
 
 // Called repeatedly when this Command is scheduled to run
 void MoveArmToPosition::Execute() {
- // sShoulder->moveArmPosition(percent);
-  sArm->telescopeArmPos(percent);
-  sWrist->setWristPosition(percent);
+  if (abs(sSwerve->gyroAngle < 90)) {
+    sShoulder->moveArmPosition(storedState.fShoulderPos);
+    sArm->telescopeArmPos(storedState.fArmPos);
+    sWrist->setWristPosition(storedState.fWristPos);
+  } else {
+    sShoulder->moveArmPosition(storedState.bShoulderPos);
+    sArm->telescopeArmPos(storedState.bArmPos);
+    sWrist->setWristPosition(storedState.bWristPos);
+  }
 }
 
 // Called once the command ends or is interrupted.
